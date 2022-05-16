@@ -1,5 +1,5 @@
 {
-  "name": "starter-rtw",
+  "name": "calc-vanilla",
   "version": "1.0.0",
   "description": "starter for react-tailwind toolchain",
   "main": "src/index.jsx",
