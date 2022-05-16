@@ -9,7 +9,7 @@ export default {
   mode: "development", // "production" | "development" | "none"
   // default entry "./src"
   entry: {
-    main: "./src/index.jsx",
+    main: "./src/main.js",
   },
   output: {
     // options related to how webpack emits results

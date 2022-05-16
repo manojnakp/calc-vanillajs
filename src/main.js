@@ -1,3 +1,5 @@
+import './main.css';
+
 let calc = {
   old: '',
   new: '0',
