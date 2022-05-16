@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>React Tailwind starter</title>
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body class="bg-gray-50">
+  <h1 class="text-3xl text-center p-5 text-slate-700">Calculator</h1>
+  <div id="root" class="flex p-4 flex-col items-center">
+    <div id="calc" class="border font-mono bg-amber-900 bg-opacity-25 rounded-lg">
+      <div class="border shadow-sm bg-gray-100 m-2 flex flex-col items-end p-2">
+        <p class="text-sm h-4" id="output-sm"></p>
+        <p class="p-2 text-xl" id="output-lg">0</p>
+      </div>
+      <hr class="w-4/5 relative left-[10%] after:w-3 after:h-3 after:absolute after:inline-block after:left-[50%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-white after:rounded-full">
+      <div class="grid w-[23rem] h-[23rem] sm:w-[32rem] sm:h-[24rem] grid-cols-4 gap-2 p-2 sm:text-lg">
+        <button type="button" class="shadow hover:bg-red-500 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-red-400">AC</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">/</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">*</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">-</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">7</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">8</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">9</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">4</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">5</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">6</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">1</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">2</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">3</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">0</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">.</button>
+        <button type="button" class="shadow hover:bg-teal-500 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-teal-400">C</button>
+        <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white col-start-4 row-start-2 row-end-4">+</button>
+        <button type="button" class="shadow hover:bg-blue-500 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg col-start-4 row-start-4 row-end-6 bg-blue-400">=</button>
+      </div>
+    </div>
+  </div>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <script src="/assets/main.bundle.js"></script>
+</body>
+
+</html>
