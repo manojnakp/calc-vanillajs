@@ -13,7 +13,7 @@ export default {
   },
   output: {
     // options related to how webpack emits results
-    path: path.resolve(__dirname, "dist"), // target directory for all output files
+    path: path.resolve(__dirname, "dist/assets"), // target directory for all output files
     filename: "[name].bundle.js", // filename template
     publicPath: "/assets/", // url as href to html files
   },
@@ -51,7 +51,7 @@ export default {
   devServer: {
     static: [
       {
-        directory: path.resolve(__dirname, "public"),
+        directory: path.resolve(__dirname, "dist"),
         publicPath: "/",
         serveIndex: true,
       },
