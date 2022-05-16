@@ -1,11 +1,16 @@
-const calc = {
+let calc = {
   old: '',
   new: '0',
 };
 
-const update = () => {
-  document.getElementById('output-sm').innerHTML = calc.old;
-  document.getElementById('output-lg').innerHTML = calc.new;
+const set = (obj) => {
+  calc = { ...calc, ...obj };
+  if (obj.old) {
+    document.getElementById('output-sm').innerHTML = calc.old;
+  }
+  if (obj.new) {
+    document.getElementById('output-lg').innerHTML = calc.new;
+  }
 };
 
 const result = (obj) => {
@@ -38,35 +43,29 @@ const handler = (evt) => {
   }
   const value = target.innerHTML;
   if (value === 'AC') {
-    calc.old = '';
-    calc.new = '0';
-    update();
+    set({ old: '', new: '0' });
     return;
   }
   if (value === 'C') {
-    calc.new = '0';
-    update();
+    set({ new: '0' });
     return;
   }
   if (/^[0-9]$/.test(value)) {
-    const old = calc.new;
-    calc.new = old === '0' ? value : `${old}${value}`;
-    update();
+    set({
+      old: calc.new,
+      new: calc.new === '0' ? value : `${calc.new}${value}`,
+    });
     return;
   }
   if (value === '=') {
     if (calc.old) {
       const ans = result(calc);
-      calc.old = '';
-      calc.new = `${ans}`;
-      update();
+      set({ old: '', new: `${ans}` });
     }
     return;
   } /* else handle operators */
   const ans = calc.old ? result(calc) : calc.new;
-  calc.old = `${ans}${value}`;
-  calc.new = '0';
-  update();
+  set({ old: `${ans}${value}`, new: '0' });
 };
 
 document.querySelector('#calc .grid').addEventListener('click', handler);
