@@ -2,11 +2,36 @@
 <html>
 
 <head>
+  <!-- Primary Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>React Tailwind starter</title>
-  <link rel="stylesheet" href="/assets/main.css">
+  <title>Calculator</title>
+  <meta name="title" content="Calculator">
+  <meta name="application-name" content="basic calc">
+  <meta name="description" content="A simple calculator app made using vanilla js and tailwindcss. Provides basic add, subtract, multiply and divide functionalities for integers and decimals">
+  <meta name="keywords" content="calculator, project, web dev, web development, javascript, vanilla js, js, css, tailwind, tailwindcss">
+  <meta name="author" content="Manojna">
+  <meta name="theme-color" content="#3d9">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calc-vanilla.netlify.app/">
+  <meta property="og:title" content="Calculator">
+  <meta property="og:description" content="A simple calculator app made using vanilla js and tailwindcss. Provides basic add, subtract, multiply and divide functionalities for integers and decimals">
+  <meta property="og:image" content="https://calc-vanilla.netlify.app/icon.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://calc-vanilla.netlify.app/">
+  <meta property="twitter:title" content="Calculator">
+  <meta property="twitter:description" content="A simple calculator app made using vanilla js and tailwindcss. Provides basic add, subtract, multiply and divide functionalities for integers and decimals">
+  <meta property="twitter:image" content="https://calc-vanilla.netlify.app/icon.png">
+
+  <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="/assets/main.css">
   <style type="text/css">
 button {
   -webkit-tap-highlight-color: transparent;
@@ -31,7 +56,9 @@ button:focus {
         <p class="text-sm h-4" id="output-sm"></p>
         <p class="p-2 text-xl" id="output-lg">0</p>
       </div>
-      <hr class="w-4/5 relative left-[10%] after:w-3 after:h-3 after:absolute after:inline-block after:left-[50%] after:translate-x-[-50%] after:translate-y-[-50%] after:bg-white after:rounded-full">
+      <div class="border h-0 w-4/5 relative left-[10%]">
+       <span class="w-3 h-3 absolute inline-block left-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-full"></span>
+      </div>
       <div class="grid w-[23rem] h-[23rem] sm:w-[32rem] sm:h-[24rem] grid-cols-4 gap-2 p-2 sm:text-lg">
         <button type="button" class="shadow hover:bg-red-500 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-red-400">AC</button>
         <button type="button" class="shadow hover:bg-slate-100 hover:shadow-md hover:-top-px hover:-left-px active:top-0 active:left-0 relative transition-all rounded-lg bg-white">/</button>
