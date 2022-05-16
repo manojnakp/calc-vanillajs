@@ -5,16 +5,18 @@ let calc = {
 
 const set = (obj) => {
   calc = { ...calc, ...obj };
-  if (obj.old) {
+  if (Object.prototype.hasOwnProperty.call(obj, 'old')) {
     document.getElementById('output-sm').innerHTML = calc.old;
   }
-  if (obj.new) {
+  if (Object.prototype.hasOwnProperty.call(obj, 'new')) {
     document.getElementById('output-lg').innerHTML = calc.new;
   }
 };
 
+const round = (x) => parseFloat(x).toFixed(6).replace(/\.?0*$/, '').replace(/\.$/, '');
+
 const result = (obj) => {
-  const [x, y] = [obj.old.slice(0, -1), obj.new].map((n) => parseInt(n, 10));
+  const [x, y] = [obj.old.slice(0, -1), obj.new].map((n) => parseFloat(n, 10));
   const op = obj.old.slice(-1);
   let ans = null;
   switch (op) {
@@ -33,7 +35,7 @@ const result = (obj) => {
     default:
       console.log('Error!! Malformed calc object', obj);
   }
-  return ans;
+  return round(ans);
 };
 
 const handler = (evt) => {
@@ -50,9 +52,16 @@ const handler = (evt) => {
     set({ new: '0' });
     return;
   }
+  if (value === '.') {
+    if (/\./.test(calc.new)) {
+      return;
+    }
+    set({ new: `${calc.new}.` });
+    return;
+  }
   if (/^[0-9]$/.test(value)) {
     set({
-      old: calc.new,
+      old: calc.old,
       new: calc.new === '0' ? value : `${calc.new}${value}`,
     });
     return;
